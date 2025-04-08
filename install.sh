@@ -9,7 +9,7 @@ if [ -d "$FOLDER" ]; then
 fi
 
 echo "[+] Cloning test framework..."
-git clone --depth 1 https://github.com/tanamaroby/cplusplus_testing_framework.git temp_test_framework
+git clone https://github.com/tanamaroby/cplusplus_testing_framework.git temp_test_framework
 
 echo "[+] Moving files..."
 mkdir "$FOLDER"
