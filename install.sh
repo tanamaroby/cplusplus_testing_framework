@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Install the test framework into the current directory
 FOLDER="test_framework"
 
 if [ -d "$FOLDER" ]; then
@@ -9,11 +8,11 @@ if [ -d "$FOLDER" ]; then
 fi
 
 echo "[+] Cloning test framework..."
-git clone https://github.com/tanamaroby/cplusplus_testing_framework.git temp_test_framework
+git clone --depth 1 https://github.com/tanamaroby/cplusplus_testing_framework.git temp_test_framework
 
 echo "[+] Moving files..."
 mkdir "$FOLDER"
-mv temp_test_framework/TestFramework.* "$FOLDER"/
+mv temp_test_framework/test_framework/TestFramework.* "$FOLDER"/
 
 echo "[+] Cleaning up..."
 rm -rf temp_test_framework
