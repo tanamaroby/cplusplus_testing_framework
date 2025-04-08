@@ -14,9 +14,9 @@
 class TestFramework
 {
 private:
-	int _testCount = 0;
-	int _passCount = 0;
-	int _failCount = 0;
+	int _testCount;
+	int _passCount;
+	int _failCount;
 
 public:
 	/* ----------------------------------- OCF ---------------------------------- */

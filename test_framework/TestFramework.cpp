@@ -3,9 +3,12 @@
 /* -------------------------------------------------------------------------- */
 /*                                     OCF                                    */
 /* -------------------------------------------------------------------------- */
-TestFramework::TestFramework(void) {}
+TestFramework::TestFramework(void) : _testCount(0), _passCount(0),
+									 _failCount(0) {}
 
-TestFramework::TestFramework(const int testCount) : _testCount(testCount) {}
+TestFramework::TestFramework(const int testCount) : _testCount(testCount),
+													_passCount(0),
+													_failCount(0) {}
 
 TestFramework::TestFramework(const TestFramework &other) { *this = other; }
 
@@ -108,12 +111,12 @@ void TestFramework::printSummary(void)
 	std::cout << BLUE
 			  << "╔══════════════════════════════╗" << RESET << std::endl;
 	std::cout << BLUE
-			  << "║        🧪 TEST SUMMARY        ║" << RESET << std::endl;
+			  << "║        🧪 TEST SUMMARY       ║" << RESET << std::endl;
 	std::cout << BLUE
 			  << "╚══════════════════════════════╝" << RESET << std::endl;
 
 	std::cout << YELLOW
-			  << " Total tests  : " << RESET << _testCount << std::endl;
+			  << " Total tests   : " << RESET << _testCount << std::endl;
 	std::cout << GREEN
 			  << " ✅ Passed     : " << RESET << _passCount << std::endl;
 	std::cout << RED
